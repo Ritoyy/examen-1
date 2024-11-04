@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Product from '../views/Product.vue'
+import ProductDetail from '@/components/ProductDetails.vue' // Path to your product detail page
+import ProductList from '../views/ProductList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +16,17 @@ const router = createRouter({
       path: '/product',
       name: 'product',
       component: Product,
+    },
+    {
+      path: '/productlist',
+      name: 'productlist',
+      component: ProductList,
+    },
+    {
+      path: '/products/:ID',
+      name: 'ProductDetail',
+      component: ProductDetail,
+      props: true, // This allows passing the route parameter as a prop to the component
     },
   ],
 })
