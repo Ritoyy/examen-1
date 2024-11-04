@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetail from '@/components/ProductDetails.vue' // Path to your product detail page
 import ProductList from '../views/ProductList.vue'
-import Product from '../views/ProductList.vue'
 import Checkout from '../views/CheckoutPage.vue'
 import Cart from '../views/CartView.vue'
+import Also from '../components/AlsoLike.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +31,10 @@ const router = createRouter({
       component: Cart,
     },
     { path: '/checkout', name: 'checkout', component: Checkout },
+<<<<<<< HEAD
+=======
+    { path: '/also', name: 'also', component: Also },
+>>>>>>> 3d237eab8ea9baf46eccd7dcc03d9c15e5d311ce
   ],
 })
 
