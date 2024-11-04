@@ -23,12 +23,15 @@
 <style scoped>
 #nav {
   top: 0%;
-  width: 100vw;
-  padding: 30px;
+  width: 99vw;
+  padding: 20px;
   box-sizing: border-box;
   text-align: center;
   margin-bottom: 20px;
   position: fixed;
+  background-color: #ffffff;
+  z-index: 100;
+
 }
 
 .logo {

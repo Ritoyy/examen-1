@@ -34,7 +34,7 @@ export default {
                 <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/15713/15713409.png" alt="TikTok" class="icon"><br><br>PRIVACY POLICY</a>
         </div>        
     </div>
-    <div class="bigText">BEATUFY OF JOSEON</div>
+    <div class="bigText">BEAUTY OF JOSEON</div>
 </template>
 
 <style scoped>
