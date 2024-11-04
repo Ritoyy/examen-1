@@ -15,8 +15,8 @@
         />
       </div>
       <div class="col" style="text-align: end">
-        <a href="#" style="color: gray; margin-inline: 30px">CART</a>
-        <a href="#" style="color: gray">SEARCH</a>
+        <RouterLink to="/cart" style="color: gray; margin-inline: 30px">CART</RouterLink>
+        <RouterLink to="/product" style="color: gray">SEARCH</RouterLink>
       </div>
     </div>
   </div>
