@@ -25,15 +25,12 @@ const router = createRouter({
       component: ProductDetail,
       props: true, // This allows passing the route parameter as a prop to the component
     },
-<<<<<<< HEAD
     {
       path: '/cart',
       name: 'cart',
       component: Cart,
     },
-=======
     { path: '/checkout', name: 'checkout', component: Checkout },
->>>>>>> facd88beb35c77111043dfff9bc80a4241b0e129
   ],
 })
 

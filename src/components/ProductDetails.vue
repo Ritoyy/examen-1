@@ -1,7 +1,7 @@
 <!-- src/views/ProductDetail.vue -->
 <template>
   <div v-if="product">
-    <div class="bg-stone-200 h-screen px-12 py-16">
+    <div class="bg-stone-200 h-auto px-12 py-16">
       <!-- Nombre -->
       <div class="text-6xl text-center mb-10">{{ product.nombre }}</div>
 
@@ -10,7 +10,7 @@
         <!-- Información y precio -->
         <div>
           <div class="h-96 flex items-end mb-4">
-            <p class="text-2xl font-semibold">${{ product.precio }}.00</p>
+            <p class="text-2xl font-semibold">${{ product.precio }}</p>
           </div>
           <p class="text-xl leading-6 pe-36">{{ product.descripcion }}</p>
         </div>
@@ -135,7 +135,7 @@ async function fetchProduct(ID) {
       throw new Error(`Product not found: ${response.status}`)
     }
     const data = await response.json()
-    product.value = data[0] // Update the product ref with the retrieved data
+    product.value = data[0]
     fetchOtherProducts()
   } catch (error) {
     console.error(`Error fetching product: ${error.message}`)
@@ -157,7 +157,7 @@ async function fetchOtherProducts() {
   }
 }
 
-// Fetch product data when the component is mounted
+
 onMounted(() => {
   const productId = route.params.ID
   try {
