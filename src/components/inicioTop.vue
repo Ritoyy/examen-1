@@ -55,7 +55,13 @@
       PRODUCTS
     </p>
     <p style="text-align: end">
-      BUY ALL<span class="material-symbols-outlined"> arrow_circle_right </span>
+      BUY ALL<span
+        @click="goToShop()"
+        class="material-symbols-outlined"
+        style="cursor: pointer"
+      >
+        arrow_circle_right
+      </span>
     </p>
     <div class="productos-grid">
       <div
@@ -156,7 +162,13 @@
       </div>
     </div>
     <p style="text-align: start">
-      BUY NOW<span class="material-symbols-outlined"> arrow_circle_right </span>
+      BUY NOW<span
+        @click="goToGlassSkinDuo()"
+        class="material-symbols-outlined"
+        style="cursor: pointer"
+      >
+        arrow_circle_right
+      </span>
     </p>
   </div>
 
@@ -210,6 +222,19 @@ onMounted(async () => {
 function seleccionarMasGustados() {
   LKProductos.value = productos.value.slice(0, 3)
 }
+
+const goToShop = () => {
+  router.push({ path: '/productlist' })
+}
+
+const goToGlassSkinDuo = () => {
+  router.push({ name: 'ProductDetail', params: { ID: 1 } })
+}
+
+function goToProduct(ID) {
+    // router.push({ path: `/products/${ID}` }) // Comentado window.location.replace
+  window.location.replace(`/products/${ID}`)
+  }
 </script>
 
 <style scoped>

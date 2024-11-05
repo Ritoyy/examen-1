@@ -1,20 +1,40 @@
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const goToShop = () => {
+  router.push({ path: '/productlist' })
+}
+
+const goToGlassSkinDuo = () => {
+  router.push({ name: 'ProductDetail', params: { ID: 1 } })}
+
+const goToHome = () => {
+  router.push({ path: '/' })
+}
+
+const goToCart = () => {
+  router.push({ path: '/cart' })
+}
+
+</script>
+
 <template>
   <div class="container-fluid" id="nav">
     <div class="row">
       <div class="col" style="text-align: start">
-        <a href="#"><span>SHOP</span></a>
+        <a @click="goToShop()" href="#"><span>SHOP</span></a>
         <a href="#"><span>ABOUT US</span></a>
-        <a href="#"><span>GLASS SKIN DUO</span></a>
+        <a @click="goToGlassSkinDuo()" href="#"><span>GLASS SKIN DUO</span></a>
       </div>
       <div class="col">
-        <img
+        <img @click="goToHome()"
           class="logo"
           src="https://i0.wp.com/beautyfeed.org/wp-content/uploads/2024/08/0-02-05-49d2ac187d2d7f767ae6122638d9714c0d32759cc6b44e9bcd74fe742e3619ab_f9b359a9a4080609.png?fit=1553%2C685&ssl=1"
           alt="logo"
         />
       </div>
       <div class="col" style="text-align: end">
-        <a href="#"><span>CART</span></a>
+        <a @click="goToCart()" href="#"><span>CART</span></a>
         <a href="#"><span>SEARCH</span></a>
       </div>
     </div>
@@ -35,6 +55,7 @@
 }
 
 .logo {
+  cursor: pointer;
   text-align: center;
   justify-content: center;
   margin: 0 auto;

@@ -1,6 +1,6 @@
 <template>
-  <div class="cart-container">
-    <div class="cart-items">
+  <div class="cart-container h-screen">
+    <div class="cart-items  mt-36">
       <h1 style="font-family: none;">CART</h1>
       <hr>
       <div class="cart-item" v-for="producto in productosSeleccionados" :key="producto.id">
@@ -9,9 +9,9 @@
           <p class="producto-nombre">{{ producto.nombre }}</p>
           <p class="producto-tamano">Size: {{ producto.tamano }}</p>
           <div class="producto-cantidad">
-            <button @click="cambiarCantidad(producto, 1)">+</button>
-            <span>{{ producto.cantidad }}</span>
             <button @click="cambiarCantidad(producto, -1)">-</button>
+            <span>{{ producto.cantidad }}</span>
+            <button @click="cambiarCantidad(producto, 1)">+</button>
           </div>
         </div>
         <p class="producto-precio">${{ (producto.precio * producto.cantidad).toFixed(2) }}</p>
@@ -19,7 +19,7 @@
       <hr />
     </div>
 
-    <div class="cart-total">
+    <div class="cart-total  mt-36">
       <h1 style="font-family: none;">TOTAL</h1>
       <hr>
       <div class="total-line">
@@ -85,6 +85,7 @@ export default {
   display: flex;
   gap: 20px;
   padding: 20px;
+
 }
 
 .cart-items,

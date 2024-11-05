@@ -1,9 +1,9 @@
 <!-- src/views/ProductDetail.vue -->
 <template>
-  <div v-if="product">
+  <div class="mb-64" v-if="product">
     <div class="bg-stone-200 h-auto px-12 py-16">
       <!-- Nombre -->
-      <div class="titles text-6xl text-center mb-10">{{ product.nombre }}</div>
+      <div class="titles text-6xl text-center mb-10 mt-44">{{ product.nombre }}</div>
 
       <!-- Columnas -->
       <div class="grid grid-cols-3">
@@ -117,12 +117,15 @@
       </div>
     </div> -->
   </div>
+
+  <FooterComp />
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AlsoLike from './AlsoLike.vue'
+import FooterComp from '@/components/Footer.vue'
 
 const route = useRoute()
 const product = ref(null)
