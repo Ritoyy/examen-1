@@ -7,8 +7,7 @@
         <p><strong>Precio:</strong> {{ product.price }}</p>
       </div>
     </div>
-    <div v-else>
-    </div>
+    <div v-else></div>
   </div>
 </template>
 
@@ -16,19 +15,19 @@
 export default {
   data() {
     return {
-      products: []
-    };
+      products: [],
+    }
   },
   mounted() {
     // Llamada a la API cuando el componente se monta
-    fetch("https://66a189667053166bcabf3141.mockapi.io/producs")
-      .then((response) => response.json())
-      .then((data) => {
-        this.products = data; // Almacenar los datos en la propiedad `products`
+    fetch('https://66a189667053166bcabf3141.mockapi.io/producs')
+      .then(response => response.json())
+      .then(data => {
+        this.products = data // Almacenar los datos en la propiedad `products`
       })
-      .catch((error) => console.error("Error al cargar los productos:", error));
-  }
-};
+      .catch(error => console.error('Error al cargar los productos:', error))
+  },
+}
 </script>
 
 <style scoped>
@@ -39,5 +38,3 @@ export default {
   border-radius: 5px;
 }
 </style>
-
-
