@@ -17,6 +17,6 @@ const products = ref([
 ]);
 
 function goToProduct(ID) {
-  router.push({ name: 'ProductDetail', params: { ID } });
+  this.router.push({ path: 'ProductDetail', params: { ID } });
 }
 </script>

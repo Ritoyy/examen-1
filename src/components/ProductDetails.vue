@@ -3,7 +3,7 @@
   <div v-if="product">
     <div class="bg-stone-200 h-auto px-12 py-16">
       <!-- Nombre -->
-      <div class="text-6xl text-center mb-10">{{ product.nombre }}</div>
+      <div class="titles text-6xl text-center mb-10">{{ product.nombre }}</div>
 
       <!-- Columnas -->
       <div class="grid grid-cols-3">
@@ -58,7 +58,7 @@
 
     <!-- Como usarlo -->
     <span>
-      <p class="text-6xl mt-32">HOW TO USE</p>
+      <p class="text-6xl mt-32 titles">HOW TO USE</p>
     </span>
     <div class="grid grid-cols-3 mt-16">
       <p class="pe-36">{{ product.comoUsar }}</p>
@@ -79,9 +79,9 @@
 
     <!-- Ingredientes -->
     <span>
-      <p class="text-6xl mt-32">INGREDIENTS</p>
+      <p class="text-6xl mt-32 titles">INGREDIENTS</p>
     </span>
-    <div class="grid gap-4 grid-cols-3 mt-16">
+    <div class="grid gap-4 grid-cols-3 my-16">
       <div>
         <p class="pe-36">{{ product.ingredientes }}</p>
         <div class="flex h-full pb-24 w-full items-end">
@@ -104,8 +104,10 @@
       </div>
     </div>
 
+    <AlsoLike />
+
     <!-- Sugerencias -->
-    <span>
+    <!-- <span>
       <p class="text-6xl mt-32">YOU MAY ALSO LIKE</p>
     </span>
     <div class="grid gap-4 grid-cols-3 mt-16">
@@ -113,13 +115,14 @@
         <p>{{ otherProducts.nombre }}</p>
         <img :src="otherProducts[0].imagen" alt="">
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import AlsoLike from './AlsoLike.vue'
 
 const route = useRoute()
 const product = ref(null)
@@ -157,7 +160,6 @@ async function fetchOtherProducts() {
   }
 }
 
-
 onMounted(() => {
   const productId = route.params.ID
   try {
@@ -173,3 +175,9 @@ const removeFromQuantity = () => {
   }
 }
 </script>
+
+<style scoped>
+.titles {
+  font-family: none;
+}
+</style>

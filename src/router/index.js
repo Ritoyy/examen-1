@@ -31,10 +31,7 @@ const router = createRouter({
       component: Cart,
     },
     { path: '/checkout', name: 'checkout', component: Checkout },
-<<<<<<< HEAD
-=======
     { path: '/also', name: 'also', component: Also },
->>>>>>> 3d237eab8ea9baf46eccd7dcc03d9c15e5d311ce
   ],
 })
 
