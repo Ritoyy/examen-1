@@ -1,21 +1,58 @@
 <script setup>
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const searchQuery = ref('');
+const products = ref([]);
+const filteredProducts = ref([]);
+const showSearchResults = ref(false); 
+
 const goToShop = () => {
-  router.push({ path: '/productlist' })
-}
+  router.push({ path: '/productlist' });
+};
 
 const goToGlassSkinDuo = () => {
-  router.push({ name: 'ProductDetail', params: { ID: 1 } })}
+  router.push({ name: 'ProductDetail', params: { ID: 1 } });
+};
 
 const goToHome = () => {
-  router.push({ path: '/' })
-}
+  router.push({ path: '/' });
+};
 
 const goToCart = () => {
-  router.push({ path: '/cart' })
-}
+  router.push({ path: '/cart' });
+};
 
+const goToProduct = (productId) => {
+  window.location.replace(`/products/${productId}`);
+};
+
+
+const fetchProducts = async () => {
+  const response = await fetch('https://66a189667053166bcabf3141.mockapi.io/producs');
+  const data = await response.json();
+  products.value = data;
+  filteredProducts.value = []; // Inicialmente no mostrar productos
+};
+
+const filterProducts = () => {
+  const query = searchQuery.value.toLowerCase();
+  filteredProducts.value = products.value.filter(product =>
+    product.nombre.toLowerCase().includes(query)
+  );
+  showSearchResults.value = filteredProducts.value.length > 0 || searchQuery.value.length > 0; 
+};
+
+// Cargar productos al inicio
+fetchProducts();
+
+// Función para cerrar 
+const closeSearch = () => {
+  searchQuery.value = ''; 
+  filteredProducts.value = []; 
+  showSearchResults.value = false; 
+};
 </script>
 
 <template>
@@ -35,8 +72,39 @@ const goToCart = () => {
       </div>
       <div class="col" style="text-align: end">
         <a @click="goToCart()" href="#"><span>CART</span></a>
-        <a href="#"><span>SEARCH</span></a>
+        <a href="#" @click="showSearchResults = true"><span>SEARCH</span></a> 
       </div>
+    </div>
+    
+    <!-- bsqueda -->
+    <div v-if="showSearchResults" style="margin-top: 20px; text-align: center;">
+      <input
+        type="text"
+        v-model="searchQuery"
+        @input="filterProducts"
+        placeholder="Escribe el nombre del producto"
+        required
+        id="search-input"  
+        style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 4px;"
+      />
+      <button @click="closeSearch" style="margin-left: 10px;">Cerrar</button>
+    </div>
+
+    <!-- Resultados de búsqueda -->
+    <div v-if="filteredProducts.length > 0" style="margin-top: 20px; text-align: center;">
+      <h3>Resultados de búsqueda:</h3>
+      <ul>
+        <li v-for="product in filteredProducts" :key="product.ID">
+          <div @click.prevent="goToProduct(product.ID)" class="res">
+  <img :src="product.imagen" alt="Imagen de {{ product.nombre }}">
+  <span>{{ product.nombre }}</span>
+  <span>{{ product.precio }}$</span>
+</div>
+        </li>
+      </ul>
+    </div>
+    <div v-else-if="searchQuery.length > 0">
+      <p>No se encontraron productos.</p>
     </div>
   </div>
 </template>
@@ -132,5 +200,20 @@ a span {
 
 .col:last-child {
   margin-right: 0;
+}
+.res {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  gap: 10px;
+}
+
+.res img {
+  width: 50px;
+  height: auto;
+}
+input{
+  background-color: #ffffff
 }
 </style>

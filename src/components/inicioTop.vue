@@ -43,8 +43,8 @@
     </div>
   </div>
 
-  <div class="also-like-container">
-    <p
+  <div >
+    <p id="products"
       style="
         font-family: none;
         font-size: 130px;
@@ -63,7 +63,7 @@
         arrow_circle_right
       </span>
     </p>
-    <div class="productos-grid">
+    <div class="productos-grid" id="grid">
       <div
         class="producto"
         @click="goToProduct(producto.ID)"
@@ -85,7 +85,7 @@
   </div>
 
   <div class="aboutUs">
-    <div
+    <div id="mission"
       style="
         font-size: 130px;
         font-family: 'Times New Roman', Times, serif;
@@ -95,8 +95,8 @@
     >
       OUR MISSION
     </div>
-    <div class="container-fluid">
-      <div class="image-container">
+    <div  id="text" class="container-fluid">
+      <div   class="image-container">
         <div class="image-column small-image">
           <div class="container-text">
             <p style="width: 16rem; text-align: start">
@@ -105,7 +105,7 @@
               type.
             </p>
           </div>
-          <img
+          <img 
             src="https://koelleza.mx/cdn/shop/files/3_2048x_def9cfbf-5af3-446f-baf0-803b2ab9f1b0.webp?v=1726182124&width=540"
             alt=""
           />
@@ -129,7 +129,7 @@
   </div>
 
   <div class="seccionGlassSkin">
-    <div
+    <div id="glass"
       style="
         font-size: 130px;
         font-family: 'Times New Roman', Times, serif;
@@ -139,7 +139,7 @@
     >
       GLASS SKIN
     </div>
-    <div class="contenedorGlassSkin">
+    <div id="glass2" class="contenedorGlassSkin">
       <div class="textoGlassSkin">
         <p style="width: 16rem; text-align: start">
           To guide you on yout path to glass skin, we re thrilled to introduce
@@ -147,7 +147,7 @@
         </p>
       </div>
 
-      <div class="imagenGlassSkin imagenColumna">
+      <div  class="imagenGlassSkin imagenColumna">
         <img
           src="https://www.pielcoreana.com/cdn/shop/files/4_c16babe9-aa05-400a-8857-c6591fc4e280.png?v=1708043358&width=600"
           alt="Imagen 1"
@@ -235,6 +235,146 @@ function goToProduct(ID) {
     // router.push({ path: `/products/${ID}` }) // Comentado window.location.replace
   window.location.replace(`/products/${ID}`)
   }
+
+onMounted(() => {
+  const target = document.getElementById('products');
+
+  // Opciones del IntersectionObserver
+  const options = {
+    root: null, // Usa el viewport
+    rootMargin: '0px',
+    threshold: 0.1 // 10% del elemento visible para activar la animación
+  };
+
+  // Función de callback que se llama cuando el elemento es visible
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Agrega las clases de animación cuando el elemento es visible
+        target.classList.add('animate__animated', 'animate__fadeInLeft');
+        
+        // Detenemos el observer si ya no queremos que se ejecute otra vez
+        observer.unobserve(target);
+      }
+    });
+  };
+
+  // Creando el IntersectionObserver
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+});
+
+
+
+onMounted(() => {
+  const target = document.getElementById('grid');
+  const options = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+  };
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+ 
+        target.classList.add('animate__animated', 'animate__fadeInUp');
+        
+
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+});
+
+onMounted(() => {
+  const target = document.getElementById('mission');
+  const options = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+  };
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+ 
+        target.classList.add('animate__animated', 'animate__fadeInRight');
+        
+
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+});
+
+onMounted(() => {
+  const target = document.getElementById('text');
+  const options = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+  };
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+ 
+        target.classList.add('animate__animated', 'animate__fadeInRight');
+        
+
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+});
+
+onMounted(() => {
+  const target = document.getElementById('glass');
+  const options = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+  };
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+ 
+        target.classList.add('animate__animated', 'animate__fadeInLeft');
+        
+
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+});
+
+onMounted(() => {
+  const target = document.getElementById('glass2');
+  const options = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+  };
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+ 
+        target.classList.add('animate__animated', 'animate__fadeInRight');
+        
+
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+});
 </script>
 
 <style scoped>
