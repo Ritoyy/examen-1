@@ -7,4 +7,8 @@ body {
   width: auto;
   background-color: #fff;
   color: black;
+  width: 100vw;
+  background-color: #fff;
+  color: black;
+  overflow-x: hidden;
 }
