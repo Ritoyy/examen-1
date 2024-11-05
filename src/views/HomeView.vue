@@ -1,7 +1,7 @@
 <script setup>
-import NavBar from '@/components/NavBar.vue';
+import NavBar from '@/components/NavBar.vue'
 import Footer1 from '../components/Footer.vue'
-import inicioTop from '@/components/inicioTop.vue';
+import inicioTop from '@/components/inicioTop.vue'
 </script>
 
 <template>
@@ -9,5 +9,3 @@ import inicioTop from '@/components/inicioTop.vue';
   <inicioTop></inicioTop>
   <Footer1></Footer1>
 </template>
-
-

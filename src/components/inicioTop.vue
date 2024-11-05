@@ -6,7 +6,7 @@
     />
   </head>
   <div class="inicio">
-        <div class="bigText animate__fadeIn">
+    <div class="bigText animate__fadeIn">
       BEAUTY <br /><span style="margin-left: 25%"
         >OF JOSE<img
           class="img3 animate__zoomIn"
@@ -44,127 +44,173 @@
   </div>
 
   <div class="also-like-container">
-      <p style="font-family: none; font-size: 130px; text-align: start; color: #404040; ">
-        PRODUCTS
-      </p>
-      <p style="text-align: end;">BUY ALL<span class="material-symbols-outlined">
-arrow_circle_right
-</span></p>
-      <div class="productos-grid">
-        <div
-          class="producto"
-          @click="goToProduct(producto.ID)"
-          v-for="producto in LKProductos"
-          :key="producto.id"
-        >
-          <img
-            :src="producto.imagen"
-            :alt="producto.nombre"
-            class="producto-imagen"
-          />
-          <p class="producto-categoria">{{ producto.categoria }}</p>
-          <div class="producto-info">
-            <span class="producto-nombre">{{ producto.nombre }}</span>
-            <span class="producto-precio">${{ producto.precio }}</span>
-          </div>
+    <p
+      style="
+        font-family: none;
+        font-size: 130px;
+        text-align: start;
+        color: #404040;
+      "
+    >
+      PRODUCTS
+    </p>
+    <p style="text-align: end">
+      BUY ALL<span class="material-symbols-outlined"> arrow_circle_right </span>
+    </p>
+    <div class="productos-grid">
+      <div
+        class="producto"
+        @click="goToProduct(producto.ID)"
+        v-for="producto in LKProductos"
+        :key="producto.id"
+      >
+        <img
+          :src="producto.imagen"
+          :alt="producto.nombre"
+          class="producto-imagen"
+        />
+        <p class="producto-categoria">{{ producto.categoria }}</p>
+        <div class="producto-info">
+          <span class="producto-nombre">{{ producto.nombre }}</span>
+          <span class="producto-precio">${{ producto.precio }}</span>
         </div>
       </div>
     </div>
-    
-<div class="aboutUs"> 
-    <div style="font-size: 130px; font-family: 'Times New Roman', Times, serif; text-align: start; color: #404040;">
-        OUR MISSION
+  </div>
+
+  <div class="aboutUs">
+    <div
+      style="
+        font-size: 130px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: start;
+        color: #404040;
+      "
+    >
+      OUR MISSION
     </div>
-    <div class="container-fluid"> 
-        <div class="image-container">
-            
-            <div class="image-column small-image">
-                <div class="container-text">
-                    <p style="width: 16rem; text-align: start;">With a focus on clear, pure and healthy skin, the mission at Beauty of Joseon is to provide the perfect products for every skin type.</p>
-                </div>
-                <img src="https://koelleza.mx/cdn/shop/files/3_2048x_def9cfbf-5af3-446f-baf0-803b2ab9f1b0.webp?v=1726182124&width=540" alt="">
-            </div>
-
-            <div class="image-column large">
-                <img src="https://kronabeautymx.com/cdn/shop/files/reviveserum_2.jpg?v=1721759098&width=800" alt="">
-            </div>
-
-            <div class="image-column small-image right">
-                <img src="https://tienditadeandy.com/cdn/shop/collections/IMG_1858.jpg?v=1700697912&width=750" alt="">
-            </div>
+    <div class="container-fluid">
+      <div class="image-container">
+        <div class="image-column small-image">
+          <div class="container-text">
+            <p style="width: 16rem; text-align: start">
+              With a focus on clear, pure and healthy skin, the mission at
+              Beauty of Joseon is to provide the perfect products for every skin
+              type.
+            </p>
+          </div>
+          <img
+            src="https://koelleza.mx/cdn/shop/files/3_2048x_def9cfbf-5af3-446f-baf0-803b2ab9f1b0.webp?v=1726182124&width=540"
+            alt=""
+          />
         </div>
-    </div>
-</div>
 
-<div class="seccionGlassSkin">
-<div style="font-size: 130px; font-family: 'Times New Roman', Times, serif; text-align: start; color: #404040;">
-        GLASS SKIN
+        <div class="image-column large">
+          <img
+            src="https://kronabeautymx.com/cdn/shop/files/reviveserum_2.jpg?v=1721759098&width=800"
+            alt=""
+          />
+        </div>
+
+        <div class="image-column small-image right">
+          <img
+            src="https://tienditadeandy.com/cdn/shop/collections/IMG_1858.jpg?v=1700697912&width=750"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccionGlassSkin">
+    <div
+      style="
+        font-size: 130px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: start;
+        color: #404040;
+      "
+    >
+      GLASS SKIN
     </div>
     <div class="contenedorGlassSkin">
-        <div class="textoGlassSkin">
-            <p style="width: 16rem; text-align: start;">
-                To guide you on yout path to glass skin, we re thrilled to introduce our Glass Skin Due - the Glow Serum and Dynasty Cream.
-            </p>
-        </div>
+      <div class="textoGlassSkin">
+        <p style="width: 16rem; text-align: start">
+          To guide you on yout path to glass skin, we re thrilled to introduce
+          our Glass Skin Due - the Glow Serum and Dynasty Cream.
+        </p>
+      </div>
 
-        <div class="imagenGlassSkin imagenColumna">
-            <img src="https://www.pielcoreana.com/cdn/shop/files/4_c16babe9-aa05-400a-8857-c6591fc4e280.png?v=1708043358&width=600" alt="Imagen 1">
-        </div>
+      <div class="imagenGlassSkin imagenColumna">
+        <img
+          src="https://www.pielcoreana.com/cdn/shop/files/4_c16babe9-aa05-400a-8857-c6591fc4e280.png?v=1708043358&width=600"
+          alt="Imagen 1"
+        />
+      </div>
 
-        <div class="imagenGlassSkin imagenColumna">
-            <img src="https://m.media-amazon.com/images/I/71Azno56mDL._AC_SX679_.jpg" alt="Imagen 2">
-        </div>
-    </div>
-            <p style="text-align: start;">BUY NOW<span class="material-symbols-outlined">
-arrow_circle_right
-</span></p>
-</div>
-
-<div class="also-like-container">
-      <p style="font-family: none; font-size: 130px; text-align: start; color: #404040; ">
-        SHOP BY
-      </p>
-      <div class="productos-grid">
-        <div
-          class="producto"
-          @click="goToProduct(producto.ID)"
-          v-for="producto in LKProductos"
-          :key="producto.id"
-        >
-          <img
-            :src="producto.imagen"
-            :alt="producto.nombre"
-            class="producto-imagen"
-          />
-          <p class="producto-categoria">{{ producto.categoria }}</p>
-          <div class="producto-info">
-          </div>
-        </div>
+      <div class="imagenGlassSkin imagenColumna">
+        <img
+          src="https://m.media-amazon.com/images/I/71Azno56mDL._AC_SX679_.jpg"
+          alt="Imagen 2"
+        />
       </div>
     </div>
+    <p style="text-align: start">
+      BUY NOW<span class="material-symbols-outlined"> arrow_circle_right </span>
+    </p>
+  </div>
+
+  <div class="also-like-container">
+    <p
+      style="
+        font-family: none;
+        font-size: 130px;
+        text-align: start;
+        color: #404040;
+      "
+    >
+      SHOP BY
+    </p>
+    <div class="productos-grid">
+      <div
+        class="producto"
+        @click="goToProduct(producto.ID)"
+        v-for="producto in LKProductos"
+        :key="producto.id"
+      >
+        <img
+          :src="producto.imagen"
+          :alt="producto.nombre"
+          class="producto-imagen"
+        />
+        <p class="producto-categoria">{{ producto.categoria }}</p>
+        <div class="producto-info"></div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue'
-  import { useRouter } from 'vue-router'
-  
-  const router = useRouter()
-  const productos = ref([])
-  const LKProductos = ref([])
-  
-  onMounted(async () => {
-    const response = await fetch(
-      'https://66a189667053166bcabf3141.mockapi.io/producs',
-    )
-    const data = await response.json()
-    productos.value = data
-    seleccionarMasGustados()
-  })
-  
-  function seleccionarMasGustados() {
-    LKProductos.value = productos.value.slice(0, 3)
-  }
-  </script>
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const productos = ref([])
+const LKProductos = ref([])
+
+onMounted(async () => {
+  const response = await fetch(
+    'https://66a189667053166bcabf3141.mockapi.io/producs',
+  )
+  const data = await response.json()
+  productos.value = data
+  seleccionarMasGustados()
+})
+
+function seleccionarMasGustados() {
+  LKProductos.value = productos.value.slice(0, 3)
+}
+</script>
 
 <style scoped>
 .inicio {
@@ -173,7 +219,6 @@ arrow_circle_right
   align-items: center;
   text-align: center;
 }
-
 
 .img1 {
   display: flex;
@@ -214,63 +259,62 @@ arrow_circle_right
   z-index: 2;
 }
 
-
 .aboutUs {
-    text-align: center;
-    margin: 20px;
-    margin-top: 150px;
+  text-align: center;
+  margin: 20px;
+  margin-top: 150px;
 }
 
 .container {
-    position: relative;
-    max-width: 1000px;
-    margin: auto;
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .image-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .image-column img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .image-column.large img {
-    max-width: 25%;
-    height:auto; 
+  max-width: 25%;
+  height: auto;
 }
 
 .image-column.small-image {
-    position: absolute;
-    max-width: 150px;
+  position: absolute;
+  max-width: 150px;
 }
 
 .image-column.small-image img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .image-column.small-image:first-child {
-    bottom: 0;
-    left: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .image-column.small-image.right {
-    top: 0;
-    right: 0;
+  top: 0;
+  right: 0;
 }
-.container-text{
+.container-text {
   position: absolute;
   bottom: 190%;
   left: 0;
@@ -320,43 +364,42 @@ arrow_circle_right
 }
 
 .producto-precio {
- margin-top: -6.5%;
+  margin-top: -6.5%;
   margin-right: 50px;
 }
 
 .seccionGlassSkin {
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  margin: 20px;
 }
 
 .contenedorGlassSkin {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .textoGlassSkin {
-    flex: 1;
-    padding: 20px; /* Agrega espacio alrededor del texto */
+  flex: 1;
+  padding: 20px; /* Agrega espacio alrededor del texto */
 }
 
 .textoGlassSkin p {
-    font-size: 18px;
-    margin: 0;
+  font-size: 18px;
+  margin: 0;
 }
 
 .imagenGlassSkin {
-    flex: 1; /* Cada columna ocupa un espacio igual */
-    display: flex;
-    justify-content: center; /* Centra la imagen dentro de la columna */
-    align-items: center; /* Alinea verticalmente en el centro */
+  flex: 1; /* Cada columna ocupa un espacio igual */
+  display: flex;
+  justify-content: center; /* Centra la imagen dentro de la columna */
+  align-items: center; /* Alinea verticalmente en el centro */
 }
 
 .imagenColumna img {
-    width: 100%; /* Ajusta la imagen al ancho de la columna */
-    height: auto; /* Mantiene la proporción de la imagen */
-    max-width: 300px; /* Opcional: establece un ancho máximo para las imágenes */
+  width: 100%; /* Ajusta la imagen al ancho de la columna */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 300px; /* Opcional: establece un ancho máximo para las imágenes */
 }
 </style>
-
