@@ -1,6 +1,11 @@
-<script setup></script>
+<script setup>
+import NavBar from '@/components/NavBar.vue'
+import Footer1 from '../components/Footer.vue'
+import inicioTop from '@/components/inicioTop.vue'
+</script>
 
 <template>
+<<<<<<< HEAD
   <div class="container-fluid" id="nav">
     <div class="row">
       <div class="col" style="text-align: start">
@@ -20,7 +25,13 @@
       </div>
     </div>
   </div>
+=======
+  <NavBar></NavBar>
+  <inicioTop></inicioTop>
+  <Footer1></Footer1>
+>>>>>>> 509bcb91af592ff31812fd091ead06bf5d12a0b5
 </template>
+
 <style scoped>
 #nav {
   top: 0%;
