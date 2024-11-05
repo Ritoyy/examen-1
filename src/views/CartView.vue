@@ -58,7 +58,7 @@ export default {
       this.subtotal = this.calcularSubtotal;
     },
     irACheckout() {
-      this.$router.push("/checkout"); // Cambia a la vista de checkout
+      this.$router.push("/checkout");
     },
   },
   mounted() {
@@ -69,7 +69,7 @@ export default {
           .filter((producto) => this.idsSeleccionados.includes(producto.ID))
           .map((producto) => ({
             ...producto,
-            cantidad: 1, // Añade una propiedad de cantidad inicial
+            cantidad: 1,
           }));
         this.actualizarSubtotal();
       })
