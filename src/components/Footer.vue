@@ -71,7 +71,7 @@ hr {
 
 
 .bigText {
-    font-size: 193px;
+    font-size: 173px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     color: #404040;
